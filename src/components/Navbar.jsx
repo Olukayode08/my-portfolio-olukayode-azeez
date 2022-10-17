@@ -1,33 +1,23 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-scroll'
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { GlobalContext } from '../context/Context';
 
 const Navbar = () => {
+  const { active, setActive } = useContext(GlobalContext);
   return (
     <>
       <section>
         <Wrapper>
-          <main>
-            <li>
-              <Link
-                className='link'
-                to='hero'
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-              >
-                Home
-              </Link>
-            </li>
-          </main>
+          
         </Wrapper>
       </section>
     </>
   );
-}
+};
 const Wrapper = styled.section`
-
-
-`
-export default Navbar
+  position: relative;
+  height: 100vh;
+  
+`;
+export default Navbar;
