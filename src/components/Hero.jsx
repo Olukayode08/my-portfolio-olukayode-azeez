@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Cv from '../assets/Olukayode.pdf';
 import { Link } from 'react-router-dom';
@@ -29,8 +29,6 @@ const Hero = () => {
   );
 };
 const Wrapper = styled.section`
-  font-family: 'Bellota', cursive;
-
   position: absolute;
   top: 50%;
   left: 50%;

@@ -11,6 +11,8 @@ import {
 } from 'react-icons/si';
 import { BsGithub } from 'react-icons/bs';
 import { DiJavascript1 } from 'react-icons/di';
+import { GrReactjs } from 'react-icons/gr';
+import Sass from '../assets/download.png'
 
 const Skills = () => {
   return (
@@ -18,6 +20,7 @@ const Skills = () => {
       <section>
         <Wrapper>
           <main>
+            <h2>Skills</h2>
             <Marquee
               style={{ margin: '0 20px' }}
               pauseOnHover={true}
@@ -26,39 +29,43 @@ const Skills = () => {
               // direction={left}
             >
               <div className='slider-container'>
-                <AiFillHtml5 />
+                <AiFillHtml5 className='icon' />
                 <h1>HTML5</h1>
               </div>
               <div className='slider-container'>
-                <SiCss3 />
+                <SiCss3 className='icon' />
                 <h1>CSS3</h1>
               </div>
               <div className='slider-container'>
-                <SiTailwindcss />
+                <SiTailwindcss className='icon' />
                 <h1>Tailwind</h1>
               </div>
               <div className='slider-container'>
-                <SiStyledcomponents />
+                <SiStyledcomponents className='icon' />
                 <h1>Styled Components</h1>
               </div>
               <div className='slider-container'>
-                <DiJavascript1 />
+                <img src={Sass} alt='Sass' />
                 <h1>Sassy Cascading Style Sheets</h1>
               </div>
               <div className='slider-container'>
-                <DiJavascript1 />
+                <DiJavascript1 className='icon' />
                 <h1>Javascript</h1>
               </div>
               <div className='slider-container'>
-                <SiFramer />
+                <GrReactjs className='icon' />
+                <h1>React</h1>
+              </div>
+              <div className='slider-container'>
+                <SiFramer className='icon' />
                 <h1>Framer motion</h1>
               </div>
               <div className='slider-container'>
-                <BsGithub />
-                <h1>Github</h1>
+                <BsGithub className='icon' />
+                <h1>Git & Github</h1>
               </div>
               <div className='slider-container'>
-                <SiFirebase />
+                <SiFirebase className='icon' />
                 <h1>Firebase</h1>
               </div>
             </Marquee>
@@ -75,10 +82,14 @@ const Wrapper = styled.section`
   transform: translate(-50%, -50%);
   main {
     display: flex;
-    display: flex;
+    flex-direction: column;
     width: 90vw;
     margin: 0 auto;
     text-align: center;
+  }
+  h2{
+    font-size: 45px;
+    padding-bottom: 15px;
   }
   .slider-container {
     display: flex;
@@ -91,6 +102,15 @@ const Wrapper = styled.section`
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
       rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     overflow: hidden;
+    .icon{
+      font-size: 30px;
+    }
+    h1{
+      padding-top: 10px;
+    }
+  }
+  img{
+    width: 10%;
   }
   @media screen and (max-width: 800px) {
     width: 80vw;
