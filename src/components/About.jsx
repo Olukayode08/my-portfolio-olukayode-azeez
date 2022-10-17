@@ -4,10 +4,10 @@ import styled from 'styled-components';
 const About = () => {
   return (
     <>
-      <section id='about'>
+      <section>
         <Wrapper>
           <main>
-            <h2>About</h2>
+            <h5>About</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequatur repellat, saepe molestias aut totam voluptatem dicta
@@ -23,20 +23,23 @@ const About = () => {
   );
 };
 const Wrapper = styled.section`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 90vh;
     padding: 60px;
-    border: 1px solid yellow;
-    h2 {
+    h5 {
+      font-family: 'Source Serif Pro';
+      font-weight: 600;
       font-size: 55px;
     }
     p {
-      max-width: 800px;
-      justify-content: center;
+      width: 700px;
       text-align: center;
       font-size: 25px;
     }
