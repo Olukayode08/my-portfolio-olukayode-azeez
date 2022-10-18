@@ -1,61 +1,30 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { GlobalContext } from '../context/Context';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { GrTwitter } from 'react-icons/gr';
+import bubbles from '../assets/bubble.png';
 
 const Navbar = () => {
-  const { active, setActive } = useContext(GlobalContext);
   return (
     <>
       <section>
         <Wrapper>
           <nav>
             <li className='link-home'>
-              <Link
-                onClick={() => setActive('home')}
-                className={active === 'home' ? 'active' : 'link'}
-                to='/'
-              >
-                Home
-              </Link>
+              <Link className='link' to='/'>Home</Link>
             </li>
             <li className='link-about'>
-              <Link
-                onClick={() => setActive('about')}
-                className={active === 'about' ? 'active' : 'link'}
-                to='/about'
-              >
-                About
-              </Link>
+              <Link className='link' to='/about'>About</Link>
             </li>
             <li className='link-skills'>
-              <Link
-                onClick={() => setActive('skills')}
-                className={active === 'skills' ? 'active' : 'link'}
-                to='/skills'
-              >
-                Skills
-              </Link>
+              <Link className='link' to='/skills'>Skills</Link>
             </li>
             <li className='link-projects'>
-              <Link
-                onClick={() => setActive('projects')}
-                className={active === 'projects' ? 'active' : 'link'}
-                to='/projects'
-              >
-                Projects
-              </Link>
+              <Link className='link' to='/projects'>Projects</Link>
             </li>
             <li className='link-contact'>
-              <Link
-                onClick={() => setActive('contact')}
-                className={active === 'contact' ? 'active' : 'link'}
-                to='contact'
-              >
-                Contact
-              </Link>
+              <Link className='link' to='/contact'>Contact</Link>
             </li>
           </nav>
           <div className='socials'>
@@ -72,6 +41,24 @@ const Navbar = () => {
               <GrTwitter />
             </a>
           </div>
+          <div className='bubbles-top'>
+            <img className='top' src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+          </div>
+          <div className='bubbles-bottom'>
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+          </div>
         </Wrapper>
       </section>
     </>
@@ -79,6 +66,7 @@ const Navbar = () => {
 };
 const Wrapper = styled.section`
   position: relative;
+  overflow: hidden;
   height: 100vh;
   li {
     cursor: pointer;
@@ -86,14 +74,9 @@ const Wrapper = styled.section`
     color: #fff;
   }
   .link {
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     color: #fff;
-  }
-  .active {
-    color: green;
-    font-size: 20px;
-    text-decoration: none;
   }
   .link-home {
     position: absolute;
@@ -118,13 +101,13 @@ const Wrapper = styled.section`
   .link-contact {
     position: absolute;
     bottom: 50%;
-    right: 0;
+    right: -18px;
     transform: rotate(90deg);
   }
   .socials {
     position: absolute;
     bottom: 50px;
-    left: 50px;
+    left: 15px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -140,6 +123,106 @@ const Wrapper = styled.section`
     width: 1px;
     height: 6rem;
     background-color: #fff;
+  }
+  .bubbles-bottom img {
+    width: 20px;
+    animation: bubble 7s linear infinite;
+  }
+  .bubbles-top img {
+    width: 20px;
+    animation: bubbles 7s linear infinite;
+  }
+  .bubbles-bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -100px;
+  }
+  .bubbles-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: -100px;
+  }
+
+  @keyframes bubble {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+  @keyframes bubbles {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  .bubbles-bottom img:nth-child(1) {
+    animation-delay: 2s;
+  }
+  .bubbles-bottom img:nth-child(2) {
+    animation-delay: 1s;
+  }
+  .bubbles-bottom img:nth-child(3) {
+    animation-delay: 3s;
+  }
+  .bubbles-bottom img:nth-child(4) {
+    animation-delay: 4.5s;
+  }
+  .bubbles-bottom img:nth-child(5) {
+    animation-delay: 3s;
+  }
+  .bubbles-bottom img:nth-child(6) {
+    animation-delay: 6s;
+  }
+  .bubbles-bottom img:nth-child(7) {
+    animation-delay: 7s;
+  }
+
+  .bubbles-top img:nth-child(1) {
+    animation-delay: 7s;
+  }
+  .bubbles-top img:nth-child(2) {
+    animation-delay: 6s;
+  }
+  .bubbles-top img:nth-child(3) {
+    animation-delay: 5.5s;
+  }
+  .bubbles-top img:nth-child(4) {
+    animation-delay: 6.5s;
+  }
+  .bubbles-top img:nth-child(5) {
+    animation-delay: 4.5s;
+  }
+  .bubbles-top img:nth-child(6) {
+    animation-delay: 1s;
+  }
+  .bubbles-top img:nth-child(7) {
+    animation-delay: 2s;
   }
 `;
 export default Navbar;

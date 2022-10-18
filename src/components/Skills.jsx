@@ -113,13 +113,9 @@ const Wrapper = styled.section`
     width: 10%;
   }
   @media screen and (max-width: 800px) {
-    width: 80vw;
     .slider-container {
       width: 30vw;
     }
-  }
-  @media screen and (max-width: 600px) {
-    width: 50vw;
   }
 `;
 export default Skills;

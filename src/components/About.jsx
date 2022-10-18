@@ -32,16 +32,30 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px;
-    h5 {
-      font-family: 'Source Serif Pro';
-      font-weight: 600;
-      font-size: 55px;
-    }
+  }
+  h5 {
+    font-family: 'Source Serif Pro';
+    font-weight: 600;
+    font-size: 55px;
+  }
+  p {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  @media screen and (max-width: 550px) {
     p {
-      width: 700px;
-      text-align: center;
-      font-size: 25px;
+      font-size: 20px;
+      width: 300px;
+    }
+  }
+  @media screen and (max-width: 280px) {
+    p {
+      font-size: 17px;
+      width: 220px;
+    }
+    h5{
+      font-size: 40px;
     }
   }
 `;

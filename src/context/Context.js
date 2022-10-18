@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const GlobalContext = React.createContext();
 const Context = ({ children }) => {
-  const [active, setActive] = useState('home')
 
   return (
     <>
-      <GlobalContext.Provider value={{ active, setActive }}>
+      <GlobalContext.Provider value={{}}>
         {children}
       </GlobalContext.Provider>
     </>

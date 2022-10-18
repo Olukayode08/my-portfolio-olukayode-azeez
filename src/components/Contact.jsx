@@ -1,41 +1,65 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useRef } from 'react';
+import styled from 'styled-components';
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+        'service_k5mwp84',
+        'template_sg04osv',
+        form.current,
+        'XtRzW6PtmW2LCiHl9'
+      )
+      // .then(
+      //   (result) => {
+      //     console.log(result.text);
+      //   },
+      //   (error) => {
+      //     console.log(error.text);
+      //   }
+      // );
+  };
   return (
     <>
       <section>
         <Wrapper>
           <main>
             <h2>Get in Touch</h2>
-            <form>
+            <form ref={form} onSubmit={sendEmail}>
               <div className='form-container'>
-                <input
-                  className='name'
-                  type='text'
-                  placeholder='Name'
-                  required
-                />
+                <input name='name' type='text' placeholder='Name' required />
+              </div>
+              <div className='form-container'>
+                <input type='email' name='email' placeholder='Email' required />
               </div>
               <div className='form-container'>
                 <input
                   className='email'
-                  type='email'
-                  placeholder='Email'
+                  type='text'
+                  name='subject'
+                  placeholder='Subject'
                   required
                 />
               </div>
               <div className='form-container'>
-                <textarea name="message" rows='7' placeholder='Message' required></textarea>
+                <textarea
+                  name='message'
+                  placeholder='Message'
+                  required
+                ></textarea>
               </div>
-              <button>Submit</button>
+              <button type='submit'>Submit</button>
             </form>
           </main>
         </Wrapper>
       </section>
     </>
   );
-}
+};
 const Wrapper = styled.section`
   position: absolute;
   top: 50%;
@@ -67,9 +91,16 @@ const Wrapper = styled.section`
     color: #fff;
     font-size: 17px;
     border: none;
-    width: 450px;
+    width: 60vw;
     height: 40px;
-    outline: 0;
+    outline: none;
+    resize: none;
+  }
+  input:active{
+    background: transparent;
+    border: 0;
+    outline: none;
+    border: none;
   }
   textarea {
     height: 100px;
@@ -83,6 +114,9 @@ const Wrapper = styled.section`
     font-size: 18px;
     font-family: inherit;
     background-color: #fff;
+    :active{
+      scale: 1.1;
+    }
   }
 `;
-export default Contact
+export default Contact;
