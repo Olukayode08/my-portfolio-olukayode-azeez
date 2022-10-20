@@ -117,5 +117,6 @@ const Wrapper = styled.section`
       width: 30vw;
     }
   }
+
 `;
 export default Skills;

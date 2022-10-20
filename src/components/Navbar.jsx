@@ -12,19 +12,29 @@ const Navbar = () => {
         <Wrapper>
           <nav>
             <li className='link-home'>
-              <Link className='link' to='/'>Home</Link>
+              <Link className='link' to='/'>
+                Home
+              </Link>
             </li>
             <li className='link-about'>
-              <Link className='link' to='/about'>About</Link>
+              <Link className='link' to='/about'>
+                About
+              </Link>
             </li>
             <li className='link-skills'>
-              <Link className='link' to='/skills'>Skills</Link>
+              <Link className='link' to='/skills'>
+                Skills
+              </Link>
             </li>
             <li className='link-projects'>
-              <Link className='link' to='/projects'>Projects</Link>
+              <Link className='link' to='/projects'>
+                Projects
+              </Link>
             </li>
             <li className='link-contact'>
-              <Link className='link' to='/contact'>Contact</Link>
+              <Link className='link' to='/contact'>
+                Contact
+              </Link>
             </li>
           </nav>
           <div className='socials'>
@@ -42,7 +52,28 @@ const Navbar = () => {
             </a>
           </div>
           <div className='bubbles-top'>
-            <img className='top' src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
             <img src={bubbles} alt='bubble' />
             <img src={bubbles} alt='bubble' />
             <img src={bubbles} alt='bubble' />
@@ -51,6 +82,27 @@ const Navbar = () => {
             <img src={bubbles} alt='bubble' />
           </div>
           <div className='bubbles-bottom'>
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
+            <img src={bubbles} alt='bubble' />
             <img src={bubbles} alt='bubble' />
             <img src={bubbles} alt='bubble' />
             <img src={bubbles} alt='bubble' />
@@ -202,6 +254,69 @@ const Wrapper = styled.section`
   .bubbles-bottom img:nth-child(7) {
     animation-delay: 7s;
   }
+  .bubbles-bottom img:nth-child(8) {
+    animation-delay: 2s;
+  }
+  .bubbles-bottom img:nth-child(9) {
+    animation-delay: 1s;
+  }
+  .bubbles-bottom img:nth-child(10) {
+    animation-delay: 3s;
+  }
+  .bubbles-bottom img:nth-child(11) {
+    animation-delay: 4.5s;
+  }
+  .bubbles-bottom img:nth-child(12) {
+    animation-delay: 3s;
+  }
+  .bubbles-bottom img:nth-child(13) {
+    animation-delay: 6s;
+  }
+  .bubbles-bottom img:nth-child(14) {
+    animation-delay: 7s;
+  }
+  .bubbles-bottom img:nth-child(15) {
+    animation-delay: 2s;
+  }
+  .bubbles-bottom img:nth-child(16) {
+    animation-delay: 1s;
+  }
+  .bubbles-bottom img:nth-child(17) {
+    animation-delay: 3s;
+  }
+  .bubbles-bottom img:nth-child(18) {
+    animation-delay: 4.5s;
+  }
+  .bubbles-bottom img:nth-child(19) {
+    animation-delay: 3s;
+  }
+  .bubbles-bottom img:nth-child(20) {
+    animation-delay: 6s;
+  }
+  .bubbles-bottom img:nth-child(21) {
+    animation-delay: 7s;
+  }
+  .bubbles-bottom img:nth-child(22) {
+    animation-delay: 2s;
+  }
+  .bubbles-bottom img:nth-child(23) {
+    animation-delay: 1s;
+  }
+  .bubbles-bottom img:nth-child(24) {
+    animation-delay: 3s;
+  }
+  .bubbles-bottom img:nth-child(25) {
+    animation-delay: 4.5s;
+  }
+  .bubbles-bottom img:nth-child(26) {
+    animation-delay: 3s;
+  }
+  .bubbles-bottom img:nth-child(27) {
+    animation-delay: 6s;
+  }
+  .bubbles-bottom img:nth-child(28) {
+    animation-delay: 7s;
+  }
 
   .bubbles-top img:nth-child(1) {
     animation-delay: 7s;
@@ -223,6 +338,69 @@ const Wrapper = styled.section`
   }
   .bubbles-top img:nth-child(7) {
     animation-delay: 2s;
+  }
+  .bubbles-top img:nth-child(8) {
+    animation-delay: 7s;
+  }
+  .bubbles-top img:nth-child(9) {
+    animation-delay: 6s;
+  }
+  .bubbles-top img:nth-child(10) {
+    animation-delay: 5.5s;
+  }
+  .bubbles-top img:nth-child(11) {
+    animation-delay: 6.5s;
+  }
+  .bubbles-top img:nth-child(12) {
+    animation-delay: 4.5s;
+  }
+  .bubbles-top img:nth-child(13) {
+    animation-delay: 1s;
+  }
+  .bubbles-top img:nth-child(14) {
+    animation-delay: 2s;
+  }
+  .bubbles-top img:nth-child(15) {
+    animation-delay: 2s;
+  }
+  .bubbles-top img:nth-child(16) {
+    animation-delay: 1s;
+  }
+  .bubbles-top img:nth-child(17) {
+    animation-delay: 3s;
+  }
+  .bubbles-top img:nth-child(18) {
+    animation-delay: 4.5s;
+  }
+  .bubbles-top img:nth-child(19) {
+    animation-delay: 3s;
+  }
+  .bubbles-top img:nth-child(20) {
+    animation-delay: 6s;
+  }
+  .bubbles-top img:nth-child(21) {
+    animation-delay: 7s;
+  }
+  .bubbles-top img:nth-child(22) {
+    animation-delay: 2s;
+  }
+  .bubbles-top img:nth-child(23) {
+    animation-delay: 1s;
+  }
+  .bubbles-top img:nth-child(24) {
+    animation-delay: 3s;
+  }
+  .bubbles-top img:nth-child(25) {
+    animation-delay: 4.5s;
+  }
+  .bubbles-top img:nth-child(26) {
+    animation-delay: 3s;
+  }
+  .bubbles-top img:nth-child(27) {
+    animation-delay: 6s;
+  }
+  .bubbles-top img:nth-child(28) {
+    animation-delay: 7s;
   }
 `;
 export default Navbar;
