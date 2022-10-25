@@ -2,42 +2,85 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { GrTwitter } from 'react-icons/gr';
-import bubbles from '../assets/bubble.png';
+import { GrTwitter, GrReactjs } from 'react-icons/gr'
+import { motion } from 'framer-motion';
+import {DiJavascript1} from 'react-icons/di'
+import {AiFillHtml5} from 'react-icons/ai'
+import {SiCss3} from 'react-icons/si'
+
+const navVariant = {
+  initial: {
+    y: -50,
+    opacity: 0,
+    scale: 0.87,
+  },
+  final: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    transition: { duration:0.6 },
+  },
+};
+const linkVariants = {
+  initial: {
+    x: -100,
+    opacity: 0,
+    scale: 0.87,
+  },
+  final: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {delay:1 , duration:0.6},
+  },
+};
 
 const Navbar = () => {
+  const date = new Date()
+  const todaysDate = date.toDateString()
+  const time = date.getHours()+':'+date.getMinutes()
   return (
     <>
-      <section>
+      <motion.section
+        transition={{ staggerChildren: 0.3 }}
+        initial='initial'
+        whileInView={'final'}
+        exit={{ opacity: 0, duration: 2 }}
+        viewport={{ once: false, amount: 0.1 }}
+      >
         <Wrapper>
-          <nav>
-            <li className='link-home'>
+          <div className='date'>
+            <p>{todaysDate}</p>
+            <p>{time}</p>
+          </div>
+          <motion.nav className='nav' variants={navVariant}>
+            <li>
               <Link className='link' to='/'>
                 Home
               </Link>
             </li>
-            <li className='link-about'>
+            <li>
               <Link className='link' to='/about'>
                 About
               </Link>
             </li>
-            <li className='link-skills'>
+            <li>
               <Link className='link' to='/skills'>
                 Skills
               </Link>
             </li>
-            <li className='link-projects'>
+            <li>
               <Link className='link' to='/projects'>
                 Projects
               </Link>
             </li>
-            <li className='link-contact'>
+            <li>
               <Link className='link' to='/contact'>
                 Contact
               </Link>
             </li>
-          </nav>
-          <div className='socials'>
+          </motion.nav>
+          <motion.div variants={linkVariants} className='socials'>
             <a href='https://github.com/Olukayode08' target='_blank'>
               <FaGithub />
             </a>
@@ -50,69 +93,65 @@ const Navbar = () => {
             <a href='https://twitter.com/_jireazeez' target='_blank'>
               <GrTwitter />
             </a>
+          </motion.div>
+
+          <div className='react'>
+            <GrReactjs className='react' />
           </div>
+          <div className='javascript'>
+            <DiJavascript1 className='javascript' />
+          </div>
+          <div className='html'>
+            <AiFillHtml5 className='html' />
+          </div>
+          <div className='css'>
+            <SiCss3 className='css' />
+          </div>
+
           <div className='bubbles-top'>
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
           </div>
           <div className='bubbles-bottom'>
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
-            <img src={bubbles} alt='bubble' />
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
+            <div className='bubble'></div>
           </div>
         </Wrapper>
-      </section>
+      </motion.section>
     </>
   );
 };
@@ -120,41 +159,34 @@ const Wrapper = styled.section`
   position: relative;
   overflow: hidden;
   height: 100vh;
+  .date {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
   li {
     cursor: pointer;
     padding: 10px;
-    color: #fff;
+    position: relative;
+    transition: all 0.4s ease-in;
+    :hover {
+      scale: 1.08;
+    }
+  }
+  
+  .home {
+    font-size: 30px;
+  }
+  .nav {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .link {
     font-size: 18px;
     text-decoration: none;
     color: #fff;
-  }
-  .link-home {
-    position: absolute;
-    top: 20px;
-    right: 50%;
-  }
-  .link-about {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-  .link-skills {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-  .link-projects {
-    position: absolute;
-    right: 50%;
-    bottom: 0;
-  }
-  .link-contact {
-    position: absolute;
-    bottom: 50%;
-    right: -18px;
-    transform: rotate(90deg);
   }
   .socials {
     position: absolute;
@@ -169,6 +201,10 @@ const Wrapper = styled.section`
   .socials a {
     color: #fff;
     font-size: 20px;
+    transition: all 0.4s ease-in;
+    :hover {
+      scale: 1.2;
+    }
   }
   .socials::after {
     content: '';
@@ -176,11 +212,49 @@ const Wrapper = styled.section`
     height: 6rem;
     background-color: #fff;
   }
-  .bubbles-bottom img {
+  .react {
+    font-size: 30px;
+    position: fixed;
+    top: 20%;
+    right: 30%;
+  }
+  .javascript {
+    font-size: 30px;
+    position: fixed;
+    bottom: 20%;
+    left: 30%;
+  }
+  .html {
+    font-size: 30px;
+    position: fixed;
+    bottom: 20%;
+    right: 30%;
+  }
+  .css {
+    font-size: 30px;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+  }
+  .html,
+  .css,
+  .javascript,
+  .react {
+    -webkit-animation: react 3s linear infinite;
+    -moz-animation: react 3s linear infinite;
+    animation: react 3s liner infinite;
+  }
+  .bubbles-bottom .bubble {
     width: 20px;
     animation: bubble 7s linear infinite;
   }
-  .bubbles-top img {
+  .bubble {
+    height: 20px;
+    width: 20px;
+    background-color: grey;
+    border-radius: 50%;
+  }
+  .bubbles-top .bubble {
     width: 20px;
     animation: bubbles 7s linear infinite;
   }
@@ -199,6 +273,26 @@ const Wrapper = styled.section`
     justify-content: space-around;
     position: absolute;
     top: -100px;
+  }
+  @media screen and (max-width: 500px) {
+    .link{
+      font-size: 15px;
+    }
+  }
+  @-webkit-keyframes react {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-moz-keyframes react {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes react {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
   }
 
   @keyframes bubble {
@@ -233,174 +327,114 @@ const Wrapper = styled.section`
       opacity: 0;
     }
   }
-  .bubbles-bottom img:nth-child(1) {
+  .bubbles-bottom .bubble:nth-child(1) {
     animation-delay: 2s;
   }
-  .bubbles-bottom img:nth-child(2) {
+  .bubbles-bottom .bubble:nth-child(2) {
     animation-delay: 1s;
   }
-  .bubbles-bottom img:nth-child(3) {
+  .bubbles-bottom .bubble:nth-child(3) {
     animation-delay: 3s;
   }
-  .bubbles-bottom img:nth-child(4) {
+  .bubbles-bottom .bubble:nth-child(4) {
     animation-delay: 4.5s;
   }
-  .bubbles-bottom img:nth-child(5) {
+  .bubbles-bottom .bubble:nth-child(5) {
     animation-delay: 3s;
   }
-  .bubbles-bottom img:nth-child(6) {
+  .bubbles-bottom .bubble:nth-child(6) {
     animation-delay: 6s;
   }
-  .bubbles-bottom img:nth-child(7) {
+  .bubbles-bottom .bubble:nth-child(7) {
     animation-delay: 7s;
   }
-  .bubbles-bottom img:nth-child(8) {
+  .bubbles-bottom .bubble:nth-child(8) {
     animation-delay: 2s;
   }
-  .bubbles-bottom img:nth-child(9) {
+  .bubbles-bottom .bubble:nth-child(9) {
     animation-delay: 1s;
   }
-  .bubbles-bottom img:nth-child(10) {
+  .bubbles-bottom .bubble:nth-child(10) {
     animation-delay: 3s;
   }
-  .bubbles-bottom img:nth-child(11) {
+  .bubbles-bottom .bubble:nth-child(11) {
     animation-delay: 4.5s;
   }
-  .bubbles-bottom img:nth-child(12) {
+  .bubbles-bottom .bubble:nth-child(12) {
     animation-delay: 3s;
   }
-  .bubbles-bottom img:nth-child(13) {
+  .bubbles-bottom .bubble:nth-child(13) {
     animation-delay: 6s;
   }
-  .bubbles-bottom img:nth-child(14) {
+  .bubbles-bottom .bubble:nth-child(14) {
     animation-delay: 7s;
   }
-  .bubbles-bottom img:nth-child(15) {
+  .bubbles-bottom .bubble:nth-child(15) {
     animation-delay: 2s;
   }
-  .bubbles-bottom img:nth-child(16) {
+  .bubbles-bottom .bubble:nth-child(16) {
     animation-delay: 1s;
   }
-  .bubbles-bottom img:nth-child(17) {
+  .bubbles-bottom .bubble:nth-child(17) {
     animation-delay: 3s;
   }
-  .bubbles-bottom img:nth-child(18) {
+  .bubbles-bottom .bubble:nth-child(18) {
     animation-delay: 4.5s;
-  }
-  .bubbles-bottom img:nth-child(19) {
-    animation-delay: 3s;
-  }
-  .bubbles-bottom img:nth-child(20) {
-    animation-delay: 6s;
-  }
-  .bubbles-bottom img:nth-child(21) {
-    animation-delay: 7s;
-  }
-  .bubbles-bottom img:nth-child(22) {
-    animation-delay: 2s;
-  }
-  .bubbles-bottom img:nth-child(23) {
-    animation-delay: 1s;
-  }
-  .bubbles-bottom img:nth-child(24) {
-    animation-delay: 3s;
-  }
-  .bubbles-bottom img:nth-child(25) {
-    animation-delay: 4.5s;
-  }
-  .bubbles-bottom img:nth-child(26) {
-    animation-delay: 3s;
-  }
-  .bubbles-bottom img:nth-child(27) {
-    animation-delay: 6s;
-  }
-  .bubbles-bottom img:nth-child(28) {
-    animation-delay: 7s;
   }
 
-  .bubbles-top img:nth-child(1) {
+  .bubbles-top .bubble:nth-child(1) {
     animation-delay: 7s;
   }
-  .bubbles-top img:nth-child(2) {
+  .bubbles-top .bubble:nth-child(2) {
     animation-delay: 6s;
   }
-  .bubbles-top img:nth-child(3) {
+  .bubbles-top .bubble:nth-child(3) {
     animation-delay: 5.5s;
   }
-  .bubbles-top img:nth-child(4) {
+  .bubbles-top .bubble:nth-child(4) {
     animation-delay: 6.5s;
   }
-  .bubbles-top img:nth-child(5) {
+  .bubbles-top .bubble:nth-child(5) {
     animation-delay: 4.5s;
   }
-  .bubbles-top img:nth-child(6) {
+  .bubbles-top .bubble:nth-child(6) {
     animation-delay: 1s;
   }
-  .bubbles-top img:nth-child(7) {
+  .bubbles-top .bubble:nth-child(7) {
     animation-delay: 2s;
   }
-  .bubbles-top img:nth-child(8) {
+  .bubbles-top .bubble:nth-child(8) {
     animation-delay: 7s;
   }
-  .bubbles-top img:nth-child(9) {
+  .bubbles-top .bubble:nth-child(9) {
     animation-delay: 6s;
   }
-  .bubbles-top img:nth-child(10) {
+  .bubbles-top .bubble:nth-child(10) {
     animation-delay: 5.5s;
   }
-  .bubbles-top img:nth-child(11) {
+  .bubbles-top .bubble:nth-child(11) {
     animation-delay: 6.5s;
   }
-  .bubbles-top img:nth-child(12) {
+  .bubbles-top .bubble:nth-child(12) {
     animation-delay: 4.5s;
   }
-  .bubbles-top img:nth-child(13) {
+  .bubbles-top .bubble:nth-child(13) {
     animation-delay: 1s;
   }
-  .bubbles-top img:nth-child(14) {
+  .bubbles-top .bubble:nth-child(14) {
     animation-delay: 2s;
   }
-  .bubbles-top img:nth-child(15) {
+  .bubbles-top .bubble:nth-child(15) {
     animation-delay: 2s;
   }
-  .bubbles-top img:nth-child(16) {
+  .bubbles-top .bubble:nth-child(16) {
     animation-delay: 1s;
   }
-  .bubbles-top img:nth-child(17) {
+  .bubbles-top .bubble:nth-child(17) {
     animation-delay: 3s;
   }
-  .bubbles-top img:nth-child(18) {
-    animation-delay: 4.5s;
-  }
-  .bubbles-top img:nth-child(19) {
-    animation-delay: 3s;
-  }
-  .bubbles-top img:nth-child(20) {
+  .bubbles-top .bubble:nth-child(18) {
     animation-delay: 6s;
-  }
-  .bubbles-top img:nth-child(21) {
-    animation-delay: 7s;
-  }
-  .bubbles-top img:nth-child(22) {
-    animation-delay: 2s;
-  }
-  .bubbles-top img:nth-child(23) {
-    animation-delay: 1s;
-  }
-  .bubbles-top img:nth-child(24) {
-    animation-delay: 3s;
-  }
-  .bubbles-top img:nth-child(25) {
-    animation-delay: 4.5s;
-  }
-  .bubbles-top img:nth-child(26) {
-    animation-delay: 3s;
-  }
-  .bubbles-top img:nth-child(27) {
-    animation-delay: 6s;
-  }
-  .bubbles-top img:nth-child(28) {
-    animation-delay: 7s;
   }
 `;
 export default Navbar;

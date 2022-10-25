@@ -20,13 +20,12 @@ const Skills = () => {
       <section>
         <Wrapper>
           <main>
-            <h2>Skills</h2>
+            <h2 className='about'>Skills</h2>
             <Marquee
               style={{ margin: '0 20px' }}
               pauseOnHover={true}
               speed={100}
               gradient={false}
-              // direction={left}
             >
               <div className='slider-container'>
                 <AiFillHtml5 className='icon' />
@@ -106,6 +105,7 @@ const Wrapper = styled.section`
       font-size: 30px;
     }
     h1{
+      font-size: 19px;
       padding-top: 10px;
     }
   }
@@ -115,6 +115,44 @@ const Wrapper = styled.section`
   @media screen and (max-width: 800px) {
     .slider-container {
       width: 30vw;
+    }
+  }
+  .about {
+    -webkit-animation: about 0.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: about 0.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+  @-webkit-keyframes about {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px) translateY(-500px);
+      transform: translateZ(-700px) translateY(-500px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+      transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes about {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px) translateY(-500px);
+      transform: translateZ(-700px) translateY(-500px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+      transform: translateZ(0) translateY(0);
+      opacity: 1;
     }
   }
 

@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&family=Source+Serif+Pro:wght@600;700&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,8 +8,7 @@
 }
 body {
   position: relative;
-  font-family: 'Source Serif Pro', serif;
-  font-family: 'Bellota', cursive;
+  font-family: 'EB Garamond', serif;
   background-color: #000;
   color: #fff;
 }

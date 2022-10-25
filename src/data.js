@@ -1,7 +1,7 @@
 import lendsqr from './assets/IMG_0130.jpg';
 import cardtonic from './assets/IMG_0133.jpg';
 import ebike from './assets/IMG_0134.jpg';
-// import github from './assets/IMG_0132.jpg';
+import github from './assets/IMG_029.jpg';
 import login from './assets/IMG_0131.jpg';
 import nosh from './assets/IMG_0139.jpg';
 import hotel from './assets/IMG_0137.jpg';
@@ -31,7 +31,7 @@ export const projects = [
   },
   {
     id: 4,
-    img: ebike,
+    img: github,
     text: 'Explored te Github Api to search different Github Developers',
     github: 'https://github.com/Olukayode08/search-for-github-users',
     demo: 'https://search-for-github-users.vercel.app/',

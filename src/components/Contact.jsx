@@ -1,6 +1,17 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser'
+import { motion } from 'framer-motion';
+
+const bodyVariant = {
+  initial: {
+    y: 1000,
+  },
+  final: {
+    y: 0,
+    transition: { delay: 0.3, duration: 0.7 },
+  },
+}
 
 const Contact = () => {
   const form = useRef();
@@ -14,22 +25,21 @@ const Contact = () => {
         form.current,
         'XtRzW6PtmW2LCiHl9'
       )
-      // .then(
-      //   (result) => {
-      //     console.log(result.text);
-      //   },
-      //   (error) => {
-      //     console.log(error.text);
-      //   }
-      // );
+
   };
   return (
     <>
-      <section>
+      <motion.section
+        transition={{ staggerChildren: 0.3 }}
+        initial='initial'
+        whileInView={'final'}
+        exit={{ opacity: 0, duration: 2 }}
+        viewport={{ once: false, amount: 0.1 }}
+      >
         <Wrapper>
           <main>
-            <h2>Get in Touch</h2>
-            <form ref={form} onSubmit={sendEmail}>
+            <h2 className='about'>Get in Touch</h2>
+            <motion.form ref={form} variants={bodyVariant} onSubmit={sendEmail}>
               <div className='form-container'>
                 <input name='name' type='text' placeholder='Name' required />
               </div>
@@ -53,12 +63,12 @@ const Contact = () => {
                 ></textarea>
               </div>
               <button type='submit'>Submit</button>
-            </form>
+            </motion.form>
           </main>
         </Wrapper>
-      </section>
+      </motion.section>
     </>
-  );
+  )
 };
 const Wrapper = styled.section`
   position: absolute;
@@ -71,7 +81,7 @@ const Wrapper = styled.section`
     text-align: center;
   }
   h2 {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
   form {
     display: flex;
@@ -91,12 +101,12 @@ const Wrapper = styled.section`
     color: #fff;
     font-size: 17px;
     border: none;
-    width: 60vw;
-    height: 40px;
+    width: 55vw;
+    height: 25px;
     outline: none;
     resize: none;
   }
-  input:active{
+  input:active {
     background: transparent;
     border: 0;
     outline: none;
@@ -114,9 +124,45 @@ const Wrapper = styled.section`
     font-size: 18px;
     font-family: inherit;
     background-color: #fff;
-    :active{
+    :active {
       scale: 1.1;
     }
   }
-`;
+  .about {
+    -webkit-animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+  @-webkit-keyframes about {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px) translateY(-500px);
+      transform: translateZ(-700px) translateY(-500px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+      transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes about {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px) translateY(-500px);
+      transform: translateZ(-700px) translateY(-500px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+      transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+`
 export default Contact;

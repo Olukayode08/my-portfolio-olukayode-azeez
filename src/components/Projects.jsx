@@ -1,18 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
 import { projects } from '../data';
+import { motion } from 'framer-motion';
+
+
+const projectVariant = {
+  initial: {
+    scale: 0,
+    opacity: 0,
+  },
+  final: {
+    opacity: 1,
+    scale: 1,
+  },
+  transition: { type: 'spring', stiffness: 10, duration: 0.8 },
+};
 const Projects = () => {
   return (
     <>
-      <section>
+      <motion.section
+        transition={{ staggerChildren: 0.3 }}
+        initial='initial'
+        whileInView={'final'}
+        exit={{ opacity: 0, duration: 2 }}
+        viewport={{ once: false, amount: 0.1 }}
+      >
         <Wrapper>
-          <h5>Projects</h5>
+          <h5 className='about'>Projects</h5>
 
           <main className='main'>
             {projects.map((project) => {
               const { id, img, text, github, demo } = project;
               return (
-                <div key={id} className='projects'>
+                <motion.div variants={projectVariant} key={id} className='projects'>
                   <div className='img-desc'>
                     <img src={img} alt='Olukayode' />
                     <p>{text}</p>
@@ -21,12 +41,12 @@ const Projects = () => {
                     <a href={github}>Github</a>
                     <a href={demo}>Live Demo</a>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </main>
         </Wrapper>
-      </section>
+      </motion.section>
     </>
   );
 };
@@ -47,7 +67,6 @@ const Wrapper = styled.section`
     overflow: auto;
   }
   h5 {
-    font-family: 'Source Serif Pro';
     font-weight: 600;
     font-size: 45px;
     text-align: center;
@@ -76,10 +95,11 @@ const Wrapper = styled.section`
     }
   }
   p {
-    width: 300px;
+    font-size: 19px;
+    width: 350px;
     margin: auto;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 10px;
     border-bottom: 1px solid grey;
   }
   .github-demo {
@@ -104,6 +124,42 @@ const Wrapper = styled.section`
     :hover {
       color: #000;
       background-color: #fff;
+    }
+  }
+  .about {
+    -webkit-animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+  @-webkit-keyframes about {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px) translateY(-500px);
+      transform: translateZ(-700px) translateY(-500px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+      transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes about {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px) translateY(-500px);
+      transform: translateZ(-700px) translateY(-500px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+      transform: translateZ(0) translateY(0);
+      opacity: 1;
     }
   }
   @media screen and (max-width: 900px) {

@@ -1,5 +1,5 @@
 import React from "react";
-import {Router, Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import Hero from "./components/Hero";
 import Navbar from './components/Navbar';
 import Skills from './components/Skills';

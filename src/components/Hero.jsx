@@ -2,14 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 import Cv from '../assets/Olukayode.pdf';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const bodyVariant = {
+  initial: {
+    y: 1000,
+  },
+  final: {
+    y: 0,
+    transition: { delay: 0.3, duration: 0.7 },
+  },
+}
 
 const Hero = () => {
 
   return (
     <>
-      <section>
+      <motion.section
+        transition={{ staggerChildren: 0.3 }}
+        initial='initial'
+        whileInView={'final'}
+        exit={{ opacity: 0, duration: 2 }}
+        viewport={{ once: false, amount: 0.1 }}
+      >
         <Wrapper>
-          <main>
+          <motion.main variants={bodyVariant}>
             <h2>Hello I'm</h2>
             <h4>Olukayode Azeez</h4>
             <h3>A Frontend Developer</h3>
@@ -21,12 +38,11 @@ const Hero = () => {
                 Let's Talk
               </Link>
             </div>
-          </main>
-          
+          </motion.main>
         </Wrapper>
-      </section>
+      </motion.section>
     </>
-  );
+  )
 };
 const Wrapper = styled.section`
   position: absolute;
