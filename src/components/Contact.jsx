@@ -32,8 +32,7 @@ const Contact = () => {
       <motion.section
         transition={{ staggerChildren: 0.3 }}
         initial='initial'
-        whileInView={'final'}
-        exit={{ opacity: 0, duration: 2 }}
+        whileInView='final'
         viewport={{ once: false, amount: 0.1 }}
       >
         <Wrapper>

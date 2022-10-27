@@ -44,8 +44,7 @@ const Navbar = () => {
       <motion.section
         transition={{ staggerChildren: 0.3 }}
         initial='initial'
-        whileInView={'final'}
-        exit={{ opacity: 0, duration: 2 }}
+        whileInView='final'
         viewport={{ once: false, amount: 0.1 }}
       >
         <Wrapper>
@@ -81,15 +80,16 @@ const Navbar = () => {
             </li>
           </motion.nav>
           <motion.div variants={linkVariants} className='socials'>
-            <a href='https://github.com/Olukayode08'>
+            <a href='https://github.com/Olukayode08' target='_blank'>
               <FaGithub />
             </a>
             <a
               href='https://www.linkedin.com/in/olukayode-azeez-a09b94238/'
+              target='_blank'
             >
               <FaLinkedinIn />
             </a>
-            <a href='https://twitter.com/_jireazeez'>
+            <a href='https://twitter.com/_jireazeez' target='_blank'>
               <GrTwitter />
             </a>
           </motion.div>

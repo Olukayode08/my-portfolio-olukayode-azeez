@@ -21,8 +21,7 @@ const Hero = () => {
       <motion.section
         transition={{ staggerChildren: 0.3 }}
         initial='initial'
-        whileInView={'final'}
-        exit={{ opacity: 0, duration: 2 }}
+        whileInView='final'
         viewport={{ once: false, amount: 0.1 }}
       >
         <Wrapper>
@@ -31,7 +30,7 @@ const Hero = () => {
             <h4>Olukayode Azeez</h4>
             <h3>A Frontend Developer</h3>
             <div className='btn-container'>
-              <a className='links' href={Cv}>
+              <a className='links' href={Cv} download>
                 Download Cv
               </a>
               <Link className='links' to='/contact'>
