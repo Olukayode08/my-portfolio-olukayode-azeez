@@ -67,8 +67,8 @@ const Wrapper = styled.section`
   }
 
   .about {
-    -webkit-animation: about 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: about 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    -webkit-animation: about 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: about 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
   @-webkit-keyframes about {
     0% {

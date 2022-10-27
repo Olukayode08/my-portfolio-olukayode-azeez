@@ -53,6 +53,7 @@ const Contact = () => {
   )
 }
 const Wrapper = styled.section`
+  overflow: auto;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -101,18 +102,18 @@ const Wrapper = styled.section`
     width: 120px;
     height: 30px;
     border-radius: 10px;
-    background: transparent;
     border: none;
-    font-size: 18px;
+    font-size: 20px;
     font-family: inherit;
     background-color: #fff;
+    color: #000;
     :active {
       scale: 1.1;
     }
   }
   .about {
-    -webkit-animation: about 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: about 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    -webkit-animation: about 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: about 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
   @-webkit-keyframes about {
     0% {
