@@ -4,34 +4,28 @@ import { projects } from '../data';
 import { motion } from 'framer-motion';
 
 
-const projectVariant = {
-  initial: {
-    scale: 0,
-    opacity: 0,
-  },
-  final: {
-    opacity: 1,
-    scale: 1,
-  },
-  transition: { type: 'spring', stiffness: 10, duration: 0.8 },
-};
+// const projectVariant = {
+//   initial: {
+//     scale: 0,
+//     opacity: 0,
+//   },
+//   final: {
+//     opacity: 1,
+//     scale: 1,
+//   },
+//   transition: { type: 'spring', stiffness: 10, duration: 0.8 },
+// };
 const Projects = () => {
   return (
     <>
-      <motion.section
-        transition={{ staggerChildren: 0.3 }}
-        initial='initial'
-        whileInView='final'
-        viewport={{ once: false, amount: 0.1 }}
-      >
+      <section>
         <Wrapper>
           <h5 className='about'>Projects</h5>
-
           <main className='main'>
             {projects.map((project) => {
               const { id, img, text, github, demo } = project;
               return (
-                <motion.div variants={projectVariant} key={id} className='projects'>
+                <div key={id} className='projects'>
                   <div className='img-desc'>
                     <img src={img} alt='Olukayode' />
                     <p>{text}</p>
@@ -40,12 +34,12 @@ const Projects = () => {
                     <a href={github}>Github</a>
                     <a href={demo}>Live Demo</a>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </main>
         </Wrapper>
-      </motion.section>
+      </section>
     </>
   );
 };

@@ -2,41 +2,36 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-const textVariant = {
-  initial: {
-    scale: 0,
-    opacity: 0,
-  },
-  final: {
-    scale: 1,
-    opacity: 1,
-    transition: { type: 'spring', stiffness: 10, delay: 0.2, duration: 0.1 },
-  },
-}
+// const textVariant = {
+//   initial: {
+//     scale: 0,
+//     opacity: 0,
+//   },
+//   final: {
+//     scale: 1,
+//     opacity: 1,
+//     transition: { type: 'spring', stiffness: 10, delay: 0.2, duration: 0.1 },
+//   },
+// }
 
 const About = () => {
   return (
     <>
-      <motion.section
-        transition={{ staggerChildren: 0.3 }}
-        initial='initial'
-        whileInView='final'
-        viewport={{ once: false, amount: 0.1 }}
-      >
+      <section>
         <Wrapper>
           <main>
-            <motion.h5 className='about'>About</motion.h5>
-            <motion.p variants={textVariant}>
+            <h5 className='about'>About</h5>
+            <p>
               A highly self driven person who has the capacity to establish,
               carry out, and maintain established procedures in any setting.
               Fast in self learning and open to continious improvement. I am
               skilled at using my technical coding knowledge in areas like
               React, Tailwind-CSS, SCSS, Firebase amongst others to solve
               problems and provide technical solutions.
-            </motion.p>
+            </p>
           </main>
         </Wrapper>
-      </motion.section>
+      </section>
     </>
   )
 }

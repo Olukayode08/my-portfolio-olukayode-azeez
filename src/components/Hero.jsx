@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const bodyVariant = {
   initial: {
-    y: 1000,
+    y: 50,
   },
   final: {
     y: 0,

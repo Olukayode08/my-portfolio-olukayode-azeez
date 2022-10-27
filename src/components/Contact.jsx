@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 
 const bodyVariant = {
   initial: {
-    y: 1000,
+    y: 100,
   },
   final: {
     y: 0,
-    transition: { delay: 0.3, duration: 0.7 },
+    transition: { duration: 0.7 },
   },
 }
 

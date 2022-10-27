@@ -12,6 +12,7 @@ body {
   font-family: 'Crimson Text', serif;
   background-color: #000;
   color: #fff;
+  overflow: hidden;
 }
 html {
   scroll-behavior: smooth;
