@@ -81,16 +81,15 @@ const Navbar = () => {
             </li>
           </motion.nav>
           <motion.div variants={linkVariants} className='socials'>
-            <a href='https://github.com/Olukayode08' target='_blank'>
+            <a href='https://github.com/Olukayode08'>
               <FaGithub />
             </a>
             <a
               href='https://www.linkedin.com/in/olukayode-azeez-a09b94238/'
-              target='_blank'
             >
               <FaLinkedinIn />
             </a>
-            <a href='https://twitter.com/_jireazeez' target='_blank'>
+            <a href='https://twitter.com/_jireazeez'>
               <GrTwitter />
             </a>
           </motion.div>

@@ -31,7 +31,7 @@ const Hero = () => {
             <h4>Olukayode Azeez</h4>
             <h3>A Frontend Developer</h3>
             <div className='btn-container'>
-              <a className='links' href={Cv} download>
+              <a className='links' href={Cv}>
                 Download Cv
               </a>
               <Link className='links' to='/contact'>
