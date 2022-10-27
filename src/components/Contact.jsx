@@ -1,44 +1,27 @@
-import React, { useRef } from 'react';
-import styled from 'styled-components';
+import React, { useRef } from 'react'
+import styled from 'styled-components'
 import emailjs from '@emailjs/browser'
-import { motion } from 'framer-motion';
-
-const bodyVariant = {
-  initial: {
-    y: 100,
-  },
-  final: {
-    y: 0,
-    transition: { duration: 0.7 },
-  },
-}
 
 const Contact = () => {
-  const form = useRef();
+  const form = useRef()
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     emailjs.sendForm(
-        'service_k5mwp84',
-        'template_sg04osv',
-        form.current,
-        'XtRzW6PtmW2LCiHl9'
-      )
-
-  };
+      'service_k5mwp84',
+      'template_sg04osv',
+      form.current,
+      'XtRzW6PtmW2LCiHl9'
+    )
+  }
   return (
     <>
-      <motion.section
-        transition={{ staggerChildren: 0.3 }}
-        initial='initial'
-        whileInView='final'
-        viewport={{ once: false, amount: 0.1 }}
-      >
+      <section>
         <Wrapper>
-          <main>
-            <h2 className='about'>Get in Touch</h2>
-            <motion.form ref={form} variants={bodyVariant} onSubmit={sendEmail}>
+          <main className='about'>
+            <h2>Get in Touch</h2>
+            <form ref={form} onSubmit={sendEmail}>
               <div className='form-container'>
                 <input name='name' type='text' placeholder='Name' required />
               </div>
@@ -62,13 +45,13 @@ const Contact = () => {
                 ></textarea>
               </div>
               <button type='submit'>Submit</button>
-            </motion.form>
+            </form>
           </main>
         </Wrapper>
-      </motion.section>
+      </section>
     </>
   )
-};
+}
 const Wrapper = styled.section`
   position: absolute;
   top: 50%;
@@ -128,8 +111,8 @@ const Wrapper = styled.section`
     }
   }
   .about {
-    -webkit-animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    -webkit-animation: about 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: about 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
   @-webkit-keyframes about {
     0% {
@@ -164,4 +147,4 @@ const Wrapper = styled.section`
     }
   }
 `
-export default Contact;
+export default Contact

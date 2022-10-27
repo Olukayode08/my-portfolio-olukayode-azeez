@@ -1,31 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import Cv from '../assets/Olukayode.pdf';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-
-const bodyVariant = {
-  initial: {
-    y: 50,
-  },
-  final: {
-    y: 0,
-    transition: { delay: 0.3, duration: 0.7 },
-  },
-}
+import React from 'react'
+import styled from 'styled-components'
+import Cv from '../assets/Olukayode.pdf'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
-
   return (
     <>
-      <motion.section
-        transition={{ staggerChildren: 0.3 }}
-        initial='initial'
-        whileInView='final'
-        viewport={{ once: false, amount: 0.1 }}
-      >
+      <section>
         <Wrapper>
-          <motion.main variants={bodyVariant}>
+          <main className='about'>
             <h2>Hello I'm</h2>
             <h4>Olukayode Azeez</h4>
             <h3>A Frontend Developer</h3>
@@ -37,12 +20,12 @@ const Hero = () => {
                 Let's Talk
               </Link>
             </div>
-          </motion.main>
+          </main>
         </Wrapper>
-      </motion.section>
+      </section>
     </>
   )
-};
+}
 const Wrapper = styled.section`
   position: absolute;
   top: 50%;
@@ -82,5 +65,42 @@ const Wrapper = styled.section`
     cursor: pointer;
     border-radius: 10px;
   }
-`;
-export default Hero;
+
+  .about {
+    -webkit-animation: about 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: about 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+  @-webkit-keyframes about {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px) translateY(-500px);
+      transform: translateZ(-700px) translateY(-500px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+      transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes about {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px) translateY(-500px);
+      transform: translateZ(-700px) translateY(-500px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+      transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+`
+export default Hero

@@ -1,20 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { projects } from '../data';
-import { motion } from 'framer-motion';
 
 
-// const projectVariant = {
-//   initial: {
-//     scale: 0,
-//     opacity: 0,
-//   },
-//   final: {
-//     opacity: 1,
-//     scale: 1,
-//   },
-//   transition: { type: 'spring', stiffness: 10, duration: 0.8 },
-// };
 const Projects = () => {
   return (
     <>

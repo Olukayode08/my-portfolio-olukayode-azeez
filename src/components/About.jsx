@@ -1,26 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
-
-// const textVariant = {
-//   initial: {
-//     scale: 0,
-//     opacity: 0,
-//   },
-//   final: {
-//     scale: 1,
-//     opacity: 1,
-//     transition: { type: 'spring', stiffness: 10, delay: 0.2, duration: 0.1 },
-//   },
-// }
 
 const About = () => {
   return (
     <>
       <section>
         <Wrapper>
-          <main>
-            <h5 className='about'>About</h5>
+          <main className='about'>
+            <h5>About</h5>
             <p>
               A highly self driven person who has the capacity to establish,
               carry out, and maintain established procedures in any setting.
@@ -73,8 +60,8 @@ const Wrapper = styled.section`
     }
   }
   .about {
-    -webkit-animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    -webkit-animation: about 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: about 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
   @-webkit-keyframes about {
     0% {
