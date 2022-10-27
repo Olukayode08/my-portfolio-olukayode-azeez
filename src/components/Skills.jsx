@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import Marquee from 'react-fast-marquee';
-import { AiFillHtml5 } from 'react-icons/ai';
+import React from 'react'
+import styled from 'styled-components'
+import Marquee from 'react-fast-marquee'
+import { AiFillHtml5 } from 'react-icons/ai'
 import {
   SiCss3,
   SiFramer,
   SiTailwindcss,
   SiStyledcomponents,
   SiFirebase,
-} from 'react-icons/si';
-import { BsGithub } from 'react-icons/bs';
-import { DiJavascript1 } from 'react-icons/di';
-import { GrReactjs } from 'react-icons/gr';
+} from 'react-icons/si'
+import { BsGithub } from 'react-icons/bs'
+import { DiJavascript1 } from 'react-icons/di'
+import { GrReactjs } from 'react-icons/gr'
 import Sass from '../assets/download.png'
 
 const Skills = () => {
@@ -72,8 +72,8 @@ const Skills = () => {
         </Wrapper>
       </section>
     </>
-  );
-};
+  )
+}
 const Wrapper = styled.section`
   position: absolute;
   top: 50%;
@@ -86,7 +86,7 @@ const Wrapper = styled.section`
     margin: 0 auto;
     text-align: center;
   }
-  h2{
+  h2 {
     font-size: 45px;
     padding-bottom: 15px;
   }
@@ -95,33 +95,34 @@ const Wrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20vw;
-    height: 150px;
+    width: 23vw;
+    height: 170px;
     margin: 0 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
       rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     overflow: hidden;
-    .icon{
+    .icon {
       font-size: 30px;
     }
-    h1{
+    h1 {
       font-size: 19px;
       padding-top: 10px;
     }
   }
-  img{
+  img {
     width: 10%;
   }
   @media screen and (max-width: 800px) {
     .slider-container {
-      width: 30vw;
+      width: 34vw;
+    }
+    h1 {
+      font-size: 17px;
     }
   }
   .about {
-    -webkit-animation: about 0.8s
-    cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: about 0.8s
-    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    -webkit-animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
   @-webkit-keyframes about {
     0% {
@@ -155,6 +156,5 @@ const Wrapper = styled.section`
       opacity: 1;
     }
   }
-
-`;
-export default Skills;
+`
+export default Skills

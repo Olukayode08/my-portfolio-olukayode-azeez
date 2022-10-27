@@ -184,7 +184,7 @@ const Wrapper = styled.section`
     justify-content: center;
   }
   .link {
-    font-size: 18px;
+    font-size: 17px;
     text-decoration: none;
     color: #fff;
   }

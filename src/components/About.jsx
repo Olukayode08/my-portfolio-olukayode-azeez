@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import React from 'react'
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 const textVariant = {
   initial: {
@@ -10,9 +10,9 @@ const textVariant = {
   final: {
     scale: 1,
     opacity: 1,
-    transition: { type: 'spring', stiffness: 10, delay: 0.2, duration: 0.1},
+    transition: { type: 'spring', stiffness: 10, delay: 0.2, duration: 0.1 },
   },
-};
+}
 
 const About = () => {
   return (
@@ -28,19 +28,19 @@ const About = () => {
           <main>
             <motion.h5 className='about'>About</motion.h5>
             <motion.p variants={textVariant}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur repellat, saepe molestias aut totam voluptatem dicta
-              beatae officiis modi ipsum nemo consequuntur adipisci. Tenetur
-              optio, eius minus esse rem natus consequatur ex eaque repellendus?
-              Excepturi rem doloremque voluptate ducimus optio nam quisquam,
-              quaerat id, quis incidunt consectetur voluptatum quod quo.
+              A highly self driven person who has the capacity to establish,
+              carry out, and maintain established procedures in any setting.
+              Fast in self learning and open to continious improvement. I am
+              skilled at using my technical coding knowledge in areas like
+              React, Tailwind-CSS, SCSS, Firebase amongst others to solve
+              problems and provide technical solutions.
             </motion.p>
           </main>
         </Wrapper>
       </motion.section>
     </>
-  );
-};
+  )
+}
 const Wrapper = styled.section`
   position: absolute;
   top: 50%;
@@ -79,10 +79,8 @@ const Wrapper = styled.section`
     }
   }
   .about {
-    -webkit-animation: about 0.8s
-      cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: about 0.8s
-      cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    -webkit-animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: about 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
   @-webkit-keyframes about {
     0% {
@@ -116,5 +114,5 @@ const Wrapper = styled.section`
       opacity: 1;
     }
   }
-`;
-export default About;
+`
+export default About

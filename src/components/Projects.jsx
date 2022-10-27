@@ -95,7 +95,7 @@ const Wrapper = styled.section`
     }
   }
   p {
-    font-size: 19px;
+    font-size: 18px;
     width: 350px;
     margin: auto;
     text-align: center;
