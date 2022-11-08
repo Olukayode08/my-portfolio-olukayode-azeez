@@ -7,6 +7,14 @@ import nosh from './assets/IMG_0139.jpg';
 import hotel from './assets/IMG_0137.jpg';
 import pennytree from './assets/IMG_0135.jpeg';
 
+// {
+//   id: 4,
+//   img: github,
+//   text: 'Explored te Github Api to search different Github Developers',
+//   github: 'https://github.com/Olukayode08/search-for-github-users',
+//   demo: 'https://search-for-github-users.vercel.app/',
+// },
+
 export const projects = [
   {
     id: 1,
@@ -29,36 +37,30 @@ export const projects = [
     github: 'https://github.com/Olukayode08/ebike-landing-page',
     demo: 'https://ebike-landing-page.vercel.app/',
   },
+
   {
     id: 4,
-    img: github,
-    text: 'Explored te Github Api to search different Github Developers',
-    github: 'https://github.com/Olukayode08/search-for-github-users',
-    demo: 'https://search-for-github-users.vercel.app/',
-  },
-  {
-    id: 5,
     img: login,
     text: 'A user form validation built with React and Firebase',
     github: 'https://github.com/Olukayode08/user-form-validation',
     demo: 'https://user-form-validation.vercel.app/',
   },
   {
-    id: 6,
+    id: 5,
     img: nosh,
     text: 'A clone of Nosh Webpage built with HTML CSS and JAVASCRIPT',
     github: 'https://github.com/Olukayode08/Nosh-landing-page',
     demo: 'http://nosh-landing-page.vercel.app/',
   },
   {
-    id: 7,
+    id: 6,
     img: hotel,
     text: 'An hotel webpage built with React.',
     github: 'https://github.com/Olukayode08/real-estate',
     demo: 'https://real-estate-opal.vercel.app/',
   },
   {
-    id: 8,
+    id: 7,
     img: pennytree,
     text: 'A clone of PennyTree using HTML, CSS and JAVASCRIPT',
     github: 'https://github.com/Olukayode08/PennyTree',

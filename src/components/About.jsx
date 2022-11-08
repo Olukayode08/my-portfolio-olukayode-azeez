@@ -6,8 +6,8 @@ const About = () => {
     <>
       <section>
         <Wrapper>
-          <main className='about'>
-            <h5>About</h5>
+          <main>
+            <h5 className='about'>About</h5>
             <p>
               A highly self driven person who has the capacity to establish,
               carry out, and maintain established procedures in any setting.
@@ -20,7 +20,7 @@ const About = () => {
         </Wrapper>
       </section>
     </>
-  )
+  );
 }
 const Wrapper = styled.section`
   position: absolute;
