@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 import emailjs from '@emailjs/browser'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
  
 
 const Contact = () => {
@@ -9,6 +11,14 @@ const Contact = () => {
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
 
+
+  const notify =()=>{
+
+    toast.success('Email sent successfully!', {
+      position: toast.POSITION.TOP_RIGHT,
+      className: 'notify'
+    })
+  }
 
   const form = useRef() 
   const sendEmail = (e) => {
@@ -73,7 +83,10 @@ const Contact = () => {
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
-              <button type='submit'>Submit</button>
+              <button onClick={sendEmail ? notify : null} type='submit'>
+                Submit
+              </button>
+              <ToastContainer />
             </form>
           </main>
         </Wrapper>
@@ -117,6 +130,10 @@ const Wrapper = styled.section`
     height: 25px;
     outline: none;
     resize: none;
+  }
+  .notify{
+    color: #fff;
+    background: #0006;
   }
   input:focus{
     outline-width: 0;
