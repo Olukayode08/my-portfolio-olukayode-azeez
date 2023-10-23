@@ -1,10 +1,16 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 import emailjs from '@emailjs/browser'
+ 
 
 const Contact = () => {
-  const form = useRef()
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
 
+
+  const form = useRef() 
   const sendEmail = (e) => {
     e.preventDefault()
 
@@ -14,6 +20,11 @@ const Contact = () => {
       form.current,
       'XtRzW6PtmW2LCiHl9'
     )
+    setName('')
+    setEmail('')
+    setMessage('')
+    setSubject('')
+
   }
   return (
     <>
@@ -23,18 +34,34 @@ const Contact = () => {
             <h2>Get in Touch</h2>
             <form ref={form} onSubmit={sendEmail}>
               <div className='form-container'>
-                <input name='name' type='text' placeholder='Name' required />
+                <input
+                  value={name}
+                  name='name'
+                  type='text'
+                  placeholder='Name'
+                  required
+                  onChange={(e) => setName(e.target.value)}
+                />
               </div>
               <div className='form-container'>
-                <input type='email' name='email' placeholder='Email' required />
+                <input
+                  value={email}
+                  type='email'
+                  name='email'
+                  placeholder='Email'
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
               <div className='form-container'>
                 <input
                   className='email'
                   type='text'
+                  value={subject}
                   name='subject'
                   placeholder='Subject'
                   required
+                  onChange={(e) => setSubject(e.target.value)}
                 />
               </div>
               <div className='form-container'>
@@ -42,6 +69,8 @@ const Contact = () => {
                   name='message'
                   placeholder='Message'
                   required
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
               <button type='submit'>Submit</button>
@@ -80,7 +109,7 @@ const Wrapper = styled.section`
   textarea,
   input {
     background: transparent;
-    font-family: inherit;
+    border: 2px solid white;
     color: #fff;
     font-size: 17px;
     border: none;
@@ -88,6 +117,9 @@ const Wrapper = styled.section`
     height: 25px;
     outline: none;
     resize: none;
+  }
+  input:focus{
+    outline-width: 0;
   }
   input:active {
     background: transparent;
