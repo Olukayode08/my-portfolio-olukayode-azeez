@@ -4,23 +4,21 @@ import emailjs from '@emailjs/browser'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
  
-
 const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
 
-
-  const notify =()=>{
-
+  const notify = () => {
     toast.success('Email sent successfully!', {
       position: toast.POSITION.TOP_RIGHT,
-      className: 'notify'
+      className: 'notify',
     })
   }
 
-  const form = useRef() 
+  const form = useRef()
+
   const sendEmail = (e) => {
     e.preventDefault()
 
@@ -34,8 +32,8 @@ const Contact = () => {
     setEmail('')
     setMessage('')
     setSubject('')
-
   }
+
   return (
     <>
       <section>
@@ -83,12 +81,10 @@ const Contact = () => {
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
-              <button onClick={sendEmail ? notify : null} type='submit'>
-                Submit
-              </button>
-              <ToastContainer />
+              <button type='submit'>Submit</button>
             </form>
           </main>
+          <ToastContainer />
         </Wrapper>
       </section>
     </>
@@ -131,11 +127,11 @@ const Wrapper = styled.section`
     outline: none;
     resize: none;
   }
-  .notify{
+  .notify {
     color: #fff;
-    background: #0006;
+    background: #000;
   }
-  input:focus{
+  input:focus {
     outline-width: 0;
   }
   input:active {
