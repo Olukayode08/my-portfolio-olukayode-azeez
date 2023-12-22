@@ -77,7 +77,6 @@ const Wrapper = styled.section`
   }
   p {
     font-size: 18px;
-    width: 350px;
     margin: auto;
     text-align: center;
     padding: 20px 10px;
@@ -144,7 +143,7 @@ const Wrapper = styled.section`
     }
   }
   @media screen and (max-width: 900px) {
-    width: 85vw;
+    width: 95vw;
   }
 `;
 export default Projects;

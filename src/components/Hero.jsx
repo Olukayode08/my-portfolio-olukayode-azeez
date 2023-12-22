@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Cv from '../assets/Olukayode.pdf'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {
@@ -13,9 +12,6 @@ const Hero = () => {
             <h4>Olukayode Azeez</h4>
             <h3>A Frontend Developer</h3>
             <div className='btn-container'>
-              <a className='links' href={Cv} download>
-                Download Cv
-              </a>
               <Link className='links' to='/contact'>
                 Let's Talk
               </Link>

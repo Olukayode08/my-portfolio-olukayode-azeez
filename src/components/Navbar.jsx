@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { GrTwitter, GrReactjs } from 'react-icons/gr'
+import { GrReactjs } from 'react-icons/gr'
+import { BsTwitterX } from 'react-icons/bs'
 import { motion } from 'framer-motion';
 import {DiJavascript1} from 'react-icons/di'
 import {AiFillHtml5} from 'react-icons/ai'
@@ -90,7 +91,7 @@ const Navbar = () => {
               <FaLinkedinIn />
             </a>
             <a href='https://twitter.com/_jireazeez' target='_blank'>
-              <GrTwitter />
+              <BsTwitterX />
             </a>
           </motion.div>
 
