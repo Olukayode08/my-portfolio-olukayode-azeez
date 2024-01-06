@@ -19,11 +19,15 @@ const Projects = () => {
                     <p>{text}</p>
                   </div>
                   <div className='github-demo'>
-                    <a href={github}>Github</a>
-                    <a href={demo}>Live Demo</a>
+                    <a target='_blank' href={github}>
+                      Github
+                    </a>
+                    <a target='_blank' href={demo}>
+                      Live Demo
+                    </a>
                   </div>
                 </div>
-              );
+              )
             })}
           </main>
         </Wrapper>

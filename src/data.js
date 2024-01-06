@@ -6,59 +6,67 @@ import feedback from './assets/feedback.png'
 import atunlo from './assets/atunlo.png'
 import login from './assets/IMG_0131.jpg'
 import hotel from './assets/IMG_0137.jpg'
+import foodApp from './assets/foodApp.jpeg'
 
 export const projects = [
   {
     id: 1,
     img: github,
-    text: 'Explored te Github Api to search different Github Developers.',
+    text: 'Explored the Github API to search different Github Developers.',
     github: 'https://github.com/Olukayode08/Search-Github-Users',
     demo: 'https://github-finder-app-rose-two.vercel.app/',
   },
   {
     id: 2,
+    img: foodApp,
+    text: 'An e-commerce food application, ',
+    github: 'https://github.com/Olukayode08/ecommerce-food-app',
+    demo: 'https://ecommerce-food-app.vercel.app/',
+  },
+  {
+    id: 3,
     img: feedback,
     text: 'A user feedback application, ',
     github: 'https://github.com/Olukayode08/Feedback-application',
     demo: 'https://feedback-application-iota.vercel.app/',
   },
   {
-    id: 3,
+    id: 4,
     img: atunlo,
     text: 'Atunlo. Built with react, styled-components, react-router-dom ',
     github: '#',
     demo: 'https://atunlotech.com/',
   },
   {
-    id: 4,
+    id: 5,
     img: lendsqr,
     text: 'Lendsqr Users admin dashboard using React and SCSS.',
     github: 'https://github.com/Olukayode08/olukayode-azeez-lendsqr-fe-test',
     demo: 'http://olukayode-azeez-lendsqr-fe-test.vercel.app/',
   },
   {
-    id: 5,
+    id: 6,
     img: login,
     text: 'A user form validation built with React and Firebase',
     github: 'https://github.com/Olukayode08/user-form-validation',
     demo: 'https://user-form-validation.vercel.app/',
   },
   {
-    id: 6,
+    id: 7,
     img: cardtonic,
     text: 'A clone of Cardtonic Webpage using React.',
     github: 'https://github.com/Olukayode08/Cardtonic-landing-page',
     demo: 'https://cardtonic-landing-page.vercel.app/',
   },
   {
-    id: 7,
+    id: 8,
     img: ebike,
     text: 'An ebike landing page built with React and TailwindCSS',
     github: 'https://github.com/Olukayode08/ebike-landing-page',
     demo: 'https://ebike-landing-page.vercel.app/',
   },
   {
-    id: 8,
+    id: 9,
     img: hotel,
     text: 'An hotel webpage built with React.',
     github: 'https://github.com/Olukayode08/real-estate',
