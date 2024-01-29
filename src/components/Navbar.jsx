@@ -81,16 +81,25 @@ const Navbar = () => {
             </li>
           </motion.nav>
           <motion.div variants={linkVariants} className='socials'>
-            <a href='https://github.com/Olukayode08' target='_blank'>
+            <a
+              href='https://github.com/Olukayode08'
+              target='_blank'
+              rel='noreferrer'
+            >
               <FaGithub />
             </a>
             <a
               href='https://www.linkedin.com/in/olukayode-azeez-a09b94238/'
               target='_blank'
+              rel='noreferrer'
             >
               <FaLinkedinIn />
             </a>
-            <a href='https://twitter.com/_jireazeez' target='_blank'>
+            <a
+              href='https://twitter.com/_jireazeez'
+              target='_blank'
+              rel='noreferrer'
+            >
               <BsTwitterX />
             </a>
           </motion.div>
@@ -153,7 +162,7 @@ const Navbar = () => {
         </Wrapper>
       </motion.section>
     </>
-  );
+  )
 };
 const Wrapper = styled.section`
   position: relative;

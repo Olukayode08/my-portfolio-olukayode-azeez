@@ -4,7 +4,7 @@ import ebike from './assets/IMG_0134.jpg'
 import github from './assets/github.png'
 import feedback from './assets/feedback.png'
 import atunlo from './assets/atunlo.png'
-import login from './assets/IMG_0131.jpg'
+import transfy from './assets/transfy.png'
 import hotel from './assets/IMG_0137.jpg'
 import foodApp from './assets/foodApp.jpeg'
 
@@ -18,17 +18,17 @@ export const projects = [
   },
   {
     id: 2,
+    img: transfy,
+    text: 'A user form validation built with React and Firebase',
+    github: 'https://github.com/Olukayode08/Transfy-Authentification',
+    demo: 'https://transfy-authentification.vercel.app/',
+  },
+  {
+    id: 3,
     img: foodApp,
     text: 'An e-commerce food application, ',
     github: 'https://github.com/Olukayode08/ecommerce-food-app',
     demo: 'https://ecommerce-food-app.vercel.app/',
-  },
-  {
-    id: 3,
-    img: feedback,
-    text: 'A user feedback application, ',
-    github: 'https://github.com/Olukayode08/Feedback-application',
-    demo: 'https://feedback-application-iota.vercel.app/',
   },
   {
     id: 4,
@@ -46,11 +46,12 @@ export const projects = [
   },
   {
     id: 6,
-    img: login,
-    text: 'A user form validation built with React and Firebase',
-    github: 'https://github.com/Olukayode08/user-form-validation',
-    demo: 'https://user-form-validation.vercel.app/',
+    img: feedback,
+    text: 'A user feedback application, ',
+    github: 'https://github.com/Olukayode08/Feedback-application',
+    demo: 'https://feedback-application-iota.vercel.app/',
   },
+
   {
     id: 7,
     img: cardtonic,

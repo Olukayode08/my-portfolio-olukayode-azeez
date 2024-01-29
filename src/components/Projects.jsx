@@ -19,10 +19,10 @@ const Projects = () => {
                     <p>{text}</p>
                   </div>
                   <div className='github-demo'>
-                    <a target='_blank' href={github}>
+                    <a target='_blank' rel='noreferrer' href={github}>
                       Github
                     </a>
-                    <a target='_blank' href={demo}>
+                    <a target='_blank' rel='noreferrer' href={demo}>
                       Live Demo
                     </a>
                   </div>

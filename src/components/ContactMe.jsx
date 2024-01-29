@@ -20,6 +20,7 @@ const ContactMe = () => {
               className='e-mail'
               href='mailto:olukakayodeazeez2000@gmail.com'
               target='_blank'
+              rel='noreferrer'
             >
               Send An Email
             </a>
