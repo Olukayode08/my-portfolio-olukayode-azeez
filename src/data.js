@@ -52,7 +52,7 @@ export const projects = [
     demo: 'http://olukayode-azeez-lendsqr-fe-test.vercel.app/',
   },
   {
-    id: 6,
+    id: 7,
     img: feedback,
     text: 'A user feedback application, ',
     github: 'https://github.com/Olukayode08/Feedback-application',
