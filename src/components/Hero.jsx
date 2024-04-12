@@ -41,7 +41,7 @@ const Wrapper = styled.section`
   }
   h4 {
     font-size: 60px;
-    padding: 10px 0;
+    margin: 10px 0;
   }
   .btn-container {
     display: flex;

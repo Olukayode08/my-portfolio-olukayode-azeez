@@ -10,30 +10,27 @@ const Projects = () => {
         <Wrapper>
           <h5 className='about'>Projects</h5>
           <main className='main'>
-            {projects.map((project) => {
-              const { id, img, text, github, demo } = project;
-              return (
-                <div key={id} className='projects'>
-                  <div className='img-desc'>
-                    <img src={img} alt='Olukayode' />
-                    <p>{text}</p>
-                  </div>
-                  <div className='github-demo'>
-                    <a target='_blank' rel='noreferrer' href={github}>
-                      Github
-                    </a>
-                    <a target='_blank' rel='noreferrer' href={demo}>
-                      Live Demo
-                    </a>
-                  </div>
+            {projects.map((project) => (
+              <div key={project.id} className='projects'>
+                <div className='img-desc'>
+                  <img src={project.img} alt='Olukayode' />
+                  <p>{project.text}</p>
                 </div>
-              )
-            })}
+                <div className='github-demo'>
+                  <a target='_blank' rel='noreferrer' href={project.github}>
+                    Github
+                  </a>
+                  <a target='_blank' rel='noreferrer' href={project.demo}>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+            ))}
           </main>
         </Wrapper>
       </section>
     </>
-  );
+  )
 };
 const Wrapper = styled.section`
   position: absolute;
@@ -73,6 +70,7 @@ const Wrapper = styled.section`
   }
   img {
     width: 75%;
+    height: 100px;
     transition: all 0.2s ease-in;
     :hover {
       scale: 1.05;
