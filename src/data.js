@@ -14,7 +14,7 @@ export const projects = [
     img: mandate,
     text: '1st Mandate is Property Dashboard for Landlords, Property Mangers and Tenants. Web application still in progress',
     github: 'https://github.com/Olukayode08/First-Mandate-Components',
-    demo: 'https://apptest.1stmandate.com/',
+    demo: 'https://first-mandate-components.vercel.app/',
   },
   {
     id: 2,
