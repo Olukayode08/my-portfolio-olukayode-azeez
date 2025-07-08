@@ -9,18 +9,19 @@ const About = () => {
           <main>
             <h5 className='about'>About</h5>
             <p>
-              A highly self driven person who has the capacity to establish,
-              carry out, and maintain established procedures in any setting.
-              Fast in self learning and open to continious improvement. I am
-              skilled at using my technical coding knowledge in areas like
-              React, Tailwind-CSS, SCSS, Firebase amongst others to solve
-              problems and provide technical solutions.
+              A frontend engineer specializing in building high performance
+              React applications. With expertise in modern JavaScript, Redux
+              Toolkit, and React Query, I architect scalable solutions that
+              balance cutting edge functionality with clean, maintainable code.
+              I am driven by precision and impact, I excel at bridging design
+              and technology. Whether crafting pixel perfect UIs or streamlining
+              state management, I focus on delivering measurable results.
             </p>
           </main>
         </Wrapper>
       </section>
     </>
-  );
+  )
 }
 const Wrapper = styled.section`
   position: absolute;

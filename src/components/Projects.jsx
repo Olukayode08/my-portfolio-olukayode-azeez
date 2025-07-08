@@ -10,16 +10,13 @@ const Projects = () => {
         <Wrapper>
           <h5 className='about'>Projects</h5>
           <main className='main'>
-            {projects.map((project) => (
-              <div key={project.id} className='projects'>
+            {projects.map((project, index) => (
+              <div key={index} className='projects'>
                 <div className='img-desc'>
                   <img src={project.img} alt='Olukayode' />
                   <p>{project.text}</p>
                 </div>
                 <div className='github-demo'>
-                  <a target='_blank' rel='noreferrer' href={project.github}>
-                    Github
-                  </a>
                   <a target='_blank' rel='noreferrer' href={project.demo}>
                     Live Demo
                   </a>
@@ -60,8 +57,8 @@ const Wrapper = styled.section`
     justify-content: center;
     text-align: center;
     margin: 0 auto;
-    width: 350px;
-    height: 300px;
+    width: 420px;
+    height: 380px;
     padding: 10px;
     margin: 10px;
     border: 1px solid grey;
@@ -69,8 +66,8 @@ const Wrapper = styled.section`
     overflow: auto;
   }
   img {
-    width: 75%;
-    height: 100px;
+    width: 300px;
+    height: 120px;
     transition: all 0.2s ease-in;
     :hover {
       scale: 1.05;
@@ -89,6 +86,7 @@ const Wrapper = styled.section`
     align-items: center;
     justify-content: center;
     padding: 20px 0 0 0;
+    width: 100%;
   }
   a {
     display: flex;
@@ -99,7 +97,7 @@ const Wrapper = styled.section`
     border: 1px solid grey;
     color: #fff;
     margin: 5px 8px;
-    width: 90px;
+    width: 95%;
     height: 40px;
     border-radius: 10px;
     transition: all 0.2s ease-in;

@@ -1,18 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Marquee from 'react-fast-marquee'
-import { AiFillHtml5 } from 'react-icons/ai'
-import {
-  SiCss3,
-  SiFramer,
-  SiTailwindcss,
-  SiStyledcomponents,
-  SiFirebase,
-} from 'react-icons/si'
-import { BsGithub } from 'react-icons/bs'
-import { DiJavascript1 } from 'react-icons/di'
-import { GrReactjs } from 'react-icons/gr'
-import Sass from '../assets/download.png'
+import { skillsData } from '../data'
 
 const Skills = () => {
   return (
@@ -27,46 +16,12 @@ const Skills = () => {
               speed={100}
               gradient={false}
             >
-              <div className='slider-container'>
-                <AiFillHtml5 className='icon' />
-                <h1>HTML5</h1>
-              </div>
-              <div className='slider-container'>
-                <SiCss3 className='icon' />
-                <h1>CSS3</h1>
-              </div>
-              <div className='slider-container'>
-                <SiTailwindcss className='icon' />
-                <h1>Tailwind</h1>
-              </div>
-              <div className='slider-container'>
-                <SiStyledcomponents className='icon' />
-                <h1>Styled Components</h1>
-              </div>
-              <div className='slider-container'>
-                <img src={Sass} alt='Sass' />
-                <h1>Sassy Cascading Style Sheets</h1>
-              </div>
-              <div className='slider-container'>
-                <DiJavascript1 className='icon' />
-                <h1>Javascript</h1>
-              </div>
-              <div className='slider-container'>
-                <GrReactjs className='icon' />
-                <h1>React</h1>
-              </div>
-              <div className='slider-container'>
-                <SiFramer className='icon' />
-                <h1>Framer motion</h1>
-              </div>
-              <div className='slider-container'>
-                <BsGithub className='icon' />
-                <h1>Git & Github</h1>
-              </div>
-              <div className='slider-container'>
-                <SiFirebase className='icon' />
-                <h1>Firebase</h1>
-              </div>
+              {skillsData.map((skill, index) => (
+                <div key={index} className='slider-container'>
+                  <div className='icon'>{skill.icon}</div>
+                  <h1>{skill.name}</h1>
+                </div>
+              ))}
             </Marquee>
           </main>
         </Wrapper>

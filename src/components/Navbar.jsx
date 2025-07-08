@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { GrReactjs } from 'react-icons/gr'
 import { BsTwitterX } from 'react-icons/bs'
-import { motion } from 'framer-motion';
-import {DiJavascript1} from 'react-icons/di'
-import {AiFillHtml5} from 'react-icons/ai'
-import {SiCss3} from 'react-icons/si'
+import { motion } from 'framer-motion'
+import { DiJavascript1 } from 'react-icons/di'
+import { AiFillHtml5 } from 'react-icons/ai'
+import { SiCss3 } from 'react-icons/si'
 
 const navVariant = {
   initial: {
@@ -19,9 +19,9 @@ const navVariant = {
     y: 0,
     opacity: 1,
     scale: 1,
-    transition: { duration:0.6 },
+    transition: { duration: 0.6 },
   },
-};
+}
 const linkVariants = {
   initial: {
     x: -100,
@@ -32,14 +32,16 @@ const linkVariants = {
     x: 0,
     opacity: 1,
     scale: 1,
-    transition: {delay:1 , duration:0.6},
+    transition: { delay: 1, duration: 0.6 },
   },
-};
+}
 
 const Navbar = () => {
   const date = new Date()
   const todaysDate = date.toDateString()
-  const time = date.getHours()+':'+date.getMinutes()
+  const time = date.getHours() + ':' + date.getMinutes()
+  const bubbleCount = 18
+  const bubbles = Array.from({ length: bubbleCount })
   return (
     <>
       <motion.section
@@ -53,55 +55,36 @@ const Navbar = () => {
             <p>{todaysDate}</p>
             <p>{time}</p>
           </div>
+
           <motion.nav className='nav' variants={navVariant}>
-            <li>
-              <Link className='link' to='/'>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className='link' to='/about'>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link className='link' to='/skills'>
-                Skills
-              </Link>
-            </li>
-            <li>
-              <Link className='link' to='/projects'>
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link className='link' to='/contact'>
-                Contact
-              </Link>
-            </li>
+            {[
+              { name: 'Home', path: '/' },
+              { name: 'About', path: '/about' },
+              { name: 'Skills', path: '/skills' },
+              { name: 'Projects', path: '/projects' },
+              { name: 'Contact', path: '/contact' },
+            ].map((item) => (
+              <li key={item.name}>
+                <Link className='link' to={item.path}>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </motion.nav>
+
           <motion.div variants={linkVariants} className='socials'>
-            <a
-              href='https://github.com/Olukayode08'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <FaGithub />
-            </a>
-            <a
-              href='https://www.linkedin.com/in/olukayode-azeez-a09b94238/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <FaLinkedinIn />
-            </a>
-            <a
-              href='https://twitter.com/_jireazeez'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <BsTwitterX />
-            </a>
+            {[
+              { icon: <FaGithub />, url: 'https://github.com/Olukayode08' },
+              {
+                icon: <FaLinkedinIn />,
+                url: 'https://www.linkedin.com/in/olukayode-azeez-a09b94238/',
+              },
+              { icon: <BsTwitterX />, url: 'https://twitter.com/_jireazeez' },
+            ].map((social, index) => (
+              <a key={index} href={social.url} target='_blank' rel='noreferrer'>
+                {social.icon}
+              </a>
+            ))}
           </motion.div>
 
           <div className='react'>
@@ -118,52 +101,28 @@ const Navbar = () => {
           </div>
 
           <div className='bubbles-top'>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
+            {bubbles.map((_, index) => (
+              <div
+                key={`top-${index}`}
+                className='bubble'
+                style={{ animationDelay: `${Math.random() * 7}s` }}
+              />
+            ))}
           </div>
           <div className='bubbles-bottom'>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
-            <div className='bubble'></div>
+            {bubbles.map((_, index) => (
+              <div
+                key={`bottom-${index}`}
+                className='bubble'
+                style={{ animationDelay: `${Math.random() * 7}s` }}
+              />
+            ))}
           </div>
         </Wrapper>
       </motion.section>
     </>
   )
-};
+}
 const Wrapper = styled.section`
   position: relative;
   overflow: hidden;
@@ -182,7 +141,7 @@ const Wrapper = styled.section`
       scale: 1.08;
     }
   }
-  
+
   .home {
     font-size: 30px;
   }
@@ -253,27 +212,13 @@ const Wrapper = styled.section`
     -moz-animation: react 3s linear infinite;
     animation: react 3s liner infinite;
   }
-  .bubbles-bottom .bubble {
-    width: 20px;
-    animation: bubble 7s linear infinite;
-  }
+
   .bubble {
     height: 20px;
     width: 20px;
     background-color: grey;
     border-radius: 50%;
-  }
-  .bubbles-top .bubble {
-    width: 20px;
-    animation: bubbles 7s linear infinite;
-  }
-  .bubbles-bottom {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    bottom: -100px;
+    opacity: 0;
   }
   .bubbles-top {
     width: 100%;
@@ -282,9 +227,26 @@ const Wrapper = styled.section`
     justify-content: space-around;
     position: absolute;
     top: -100px;
+
+    .bubble {
+      animation: bubbles 7s linear infinite;
+    }
+  }
+
+  .bubbles-bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -100px;
+
+    .bubble {
+      animation: bubble 7s linear infinite;
+    }
   }
   @media screen and (max-width: 500px) {
-    .link{
+    .link {
       font-size: 15px;
     }
   }
@@ -320,6 +282,7 @@ const Wrapper = styled.section`
       opacity: 0;
     }
   }
+
   @keyframes bubbles {
     0% {
       transform: translateY(0);
@@ -336,114 +299,5 @@ const Wrapper = styled.section`
       opacity: 0;
     }
   }
-  .bubbles-bottom .bubble:nth-child(1) {
-    animation-delay: 2s;
-  }
-  .bubbles-bottom .bubble:nth-child(2) {
-    animation-delay: 1s;
-  }
-  .bubbles-bottom .bubble:nth-child(3) {
-    animation-delay: 3s;
-  }
-  .bubbles-bottom .bubble:nth-child(4) {
-    animation-delay: 4.5s;
-  }
-  .bubbles-bottom .bubble:nth-child(5) {
-    animation-delay: 3s;
-  }
-  .bubbles-bottom .bubble:nth-child(6) {
-    animation-delay: 6s;
-  }
-  .bubbles-bottom .bubble:nth-child(7) {
-    animation-delay: 7s;
-  }
-  .bubbles-bottom .bubble:nth-child(8) {
-    animation-delay: 2s;
-  }
-  .bubbles-bottom .bubble:nth-child(9) {
-    animation-delay: 1s;
-  }
-  .bubbles-bottom .bubble:nth-child(10) {
-    animation-delay: 3s;
-  }
-  .bubbles-bottom .bubble:nth-child(11) {
-    animation-delay: 4.5s;
-  }
-  .bubbles-bottom .bubble:nth-child(12) {
-    animation-delay: 3s;
-  }
-  .bubbles-bottom .bubble:nth-child(13) {
-    animation-delay: 6s;
-  }
-  .bubbles-bottom .bubble:nth-child(14) {
-    animation-delay: 7s;
-  }
-  .bubbles-bottom .bubble:nth-child(15) {
-    animation-delay: 2s;
-  }
-  .bubbles-bottom .bubble:nth-child(16) {
-    animation-delay: 1s;
-  }
-  .bubbles-bottom .bubble:nth-child(17) {
-    animation-delay: 3s;
-  }
-  .bubbles-bottom .bubble:nth-child(18) {
-    animation-delay: 4.5s;
-  }
-
-  .bubbles-top .bubble:nth-child(1) {
-    animation-delay: 7s;
-  }
-  .bubbles-top .bubble:nth-child(2) {
-    animation-delay: 6s;
-  }
-  .bubbles-top .bubble:nth-child(3) {
-    animation-delay: 5.5s;
-  }
-  .bubbles-top .bubble:nth-child(4) {
-    animation-delay: 6.5s;
-  }
-  .bubbles-top .bubble:nth-child(5) {
-    animation-delay: 4.5s;
-  }
-  .bubbles-top .bubble:nth-child(6) {
-    animation-delay: 1s;
-  }
-  .bubbles-top .bubble:nth-child(7) {
-    animation-delay: 2s;
-  }
-  .bubbles-top .bubble:nth-child(8) {
-    animation-delay: 7s;
-  }
-  .bubbles-top .bubble:nth-child(9) {
-    animation-delay: 6s;
-  }
-  .bubbles-top .bubble:nth-child(10) {
-    animation-delay: 5.5s;
-  }
-  .bubbles-top .bubble:nth-child(11) {
-    animation-delay: 6.5s;
-  }
-  .bubbles-top .bubble:nth-child(12) {
-    animation-delay: 4.5s;
-  }
-  .bubbles-top .bubble:nth-child(13) {
-    animation-delay: 1s;
-  }
-  .bubbles-top .bubble:nth-child(14) {
-    animation-delay: 2s;
-  }
-  .bubbles-top .bubble:nth-child(15) {
-    animation-delay: 2s;
-  }
-  .bubbles-top .bubble:nth-child(16) {
-    animation-delay: 1s;
-  }
-  .bubbles-top .bubble:nth-child(17) {
-    animation-delay: 3s;
-  }
-  .bubbles-top .bubble:nth-child(18) {
-    animation-delay: 6s;
-  }
-`;
-export default Navbar;
+`
+export default Navbar
