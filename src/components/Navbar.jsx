@@ -159,12 +159,12 @@ const Wrapper = styled.section`
   .socials {
     position: absolute;
     bottom: 50px;
+    height: 100%;
     left: 15px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
     align-items: center;
-    justify-content: center;
+    gap: 15px;
   }
   .socials a {
     color: #fff;
@@ -246,6 +246,13 @@ const Wrapper = styled.section`
     }
   }
   @media screen and (max-width: 500px) {
+    .socials {
+      top: 30px;
+    }
+    .socials::after {
+      display: none;
+    }
+
     .link {
       font-size: 15px;
     }

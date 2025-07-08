@@ -1,4 +1,3 @@
-import lendsqr from './assets/IMG_0130.jpg'
 import ebike from './assets/IMG_0134.jpg'
 import github from './assets/github.png'
 import feedback from './assets/feedback.png'
